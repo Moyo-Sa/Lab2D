@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cob8tdmfv6lix"]
+
+[ext_resource type="PackedScene" uid="uid://baipdulderli4" path="res://scenes/platform.tscn" id="1_0w6yu"]
+
+[sub_resource type="GDScript" id="GDScript_kj8xu"]
+script/source = "extends Area2D
+
+
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofmwn"]
+size = Vector2(23, 12)
+
+[node name="Area2D" type="StaticBody2D"]
+script = SubResource("GDScript_kj8xu")
+
+[node name="Platform" parent="." instance=ExtResource("1_0w6yu")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 2
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_ofmwn")

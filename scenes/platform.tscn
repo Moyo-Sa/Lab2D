@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://baipdulderli4"]
+
+[ext_resource type="Texture2D" uid="uid://be0l0p0oamc01" path="res://assets/game_assets/sprites/exit_jump (28x28).png" id="1_8diyp"]
+[ext_resource type="Script" path="res://script/Area2D.gd" id="2_pueuy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmmue"]
+size = Vector2(23, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6w1dj"]
+atlas = ExtResource("1_8diyp")
+region = Rect2(56, 0, 28, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gpg04"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6w1dj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5p15"]
+size = Vector2(23, 7)
+
+[node name="Platform" type="StaticBody2D"]
+visibility_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 2
+position = Vector2(-0.5, -6.5)
+shape = SubResource("RectangleShape2D_dmmue")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visibility_layer = 2
+position = Vector2(0, 3)
+sprite_frames = SubResource("SpriteFrames_gpg04")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+visibility_layer = 2
+collision_mask = 2
+script = ExtResource("2_pueuy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -6.5)
+shape = SubResource("RectangleShape2D_b5p15")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

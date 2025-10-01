@@ -1,0 +1,186 @@
+[gd_scene load_steps=22 format=3 uid="uid://dk6pcgbs5qdrs"]
+
+[ext_resource type="Script" path="res://script/game_over.gd" id="1_7p5ih"]
+[ext_resource type="FontFile" uid="uid://c3o0ndxndlfal" path="res://assets/game_assets/fonts/PixelOperator8-Bold.ttf" id="2_jan1k"]
+[ext_resource type="Texture2D" uid="uid://m8gdcaqxasvp" path="res://assets/game_assets/sprites/background.png" id="2_jb70f"]
+[ext_resource type="FontFile" uid="uid://b64eqyhf3fijw" path="res://assets/game_assets/fonts/PixelOperator8.ttf" id="3_8bwdd"]
+[ext_resource type="Texture2D" uid="uid://cdoa2000dcc6l" path="res://assets/game_assets/sprites/knight.png" id="5_l5rjo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eg2rl"]
+atlas = ExtResource("5_l5rjo")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmjkb"]
+atlas = ExtResource("5_l5rjo")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dc2ns"]
+atlas = ExtResource("5_l5rjo")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0urjd"]
+atlas = ExtResource("5_l5rjo")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vil7n"]
+atlas = ExtResource("5_l5rjo")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22gax"]
+atlas = ExtResource("5_l5rjo")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jegpt"]
+atlas = ExtResource("5_l5rjo")
+region = Rect2(192, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arllp"]
+atlas = ExtResource("5_l5rjo")
+region = Rect2(224, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kl3hp"]
+atlas = ExtResource("5_l5rjo")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uyq6"]
+atlas = ExtResource("5_l5rjo")
+region = Rect2(64, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8f6m"]
+atlas = ExtResource("5_l5rjo")
+region = Rect2(96, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuqxv"]
+atlas = ExtResource("5_l5rjo")
+region = Rect2(128, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1vfg"]
+atlas = ExtResource("5_l5rjo")
+region = Rect2(160, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_000ml"]
+atlas = ExtResource("5_l5rjo")
+region = Rect2(192, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgtb7"]
+atlas = ExtResource("5_l5rjo")
+region = Rect2(224, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u7cny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eg2rl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmjkb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dc2ns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0urjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vil7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22gax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jegpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arllp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kl3hp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1uyq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8f6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuqxv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1vfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_000ml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgtb7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_7p5ih")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -969.0
+offset_bottom = -511.0
+
+[node name="Background" type="Sprite2D" parent="TextureRect"]
+position = Vector2(580, 326.5)
+scale = Vector2(36, 20.1562)
+texture = ExtResource("2_jb70f")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 451.0
+offset_top = 221.0
+offset_right = -425.0
+offset_bottom = -395.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_jan1k")
+theme_override_font_sizes/font_size = 32
+text = "Game Over"
+
+[node name="newGame" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 516.0
+offset_top = 337.0
+offset_right = -462.0
+offset_bottom = -280.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_8bwdd")
+theme_override_font_sizes/font_size = 16
+text = "New Game
+"
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 409.0
+offset_top = 279.0
+offset_right = -367.0
+offset_bottom = -312.0
+theme_override_fonts/font = ExtResource("3_8bwdd")
+theme_override_font_sizes/font_size = 16
+text = "You collected X out of Y coins!"
+
+[node name="AnimatedGO" type="AnimatedSprite2D" parent="."]
+position = Vector2(614, 521)
+scale = Vector2(7, 7.09375)
+sprite_frames = SubResource("SpriteFrames_u7cny")
+autoplay = "default"
+frame_progress = 0.384986
+
+[connection signal="pressed" from="newGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="newGame" to="." method="_on_button_pressed"]
